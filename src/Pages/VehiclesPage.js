@@ -20,14 +20,17 @@ const VehiclesPage = () => {
 
     useEffect(() => {
         fetchVehicles();
-    }, []);
+    }, [])
+    const handleSearch = async (driverName) => {
+        try {
+            const response = await axios.get(`${API_URL}?driver=${driverName}`);
+            setVehicles(response.data);
+        } catch (error) {
+            console.error('Error searching for vehicles:', error);
+        }
+    };
 
-
-
-
-
-
-     //Display details by name while typing in search bar if found display else show no vehicle found dynamically
+    
 
     return (
         <>
@@ -38,10 +41,13 @@ const VehiclesPage = () => {
                                       class="form-control me-sm-2"
                                       type="text"
                                       placeholder="Search"
+                                      onChange={e => handleSearch(e.target.value)}
+                                     
                                   />
                                   <button
                                       class="btn btn-outline-success my-2 my-sm-0"
                                       type="submit"
+                                      
                                       
                                   >
                                       Search
