@@ -1,0 +1,18 @@
+{
+  "vehicle_details": [
+    {
+      "id": "d9c3",
+      "type": "Sedan",
+      "license": "TN45KL7845",
+      "driver": "Tony",
+      "schedule": "2025-04-20"
+    },
+    {
+      "id": "d536",
+      "type": "SUV",
+      "license": "TN56AB2345",
+      "driver": "Alex Bruce",
+      "schedule": "2025-04-27"
+    }
+  ]
+}
